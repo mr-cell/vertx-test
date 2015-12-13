@@ -1,25 +1,21 @@
 package mr.cell.domain;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import io.vertx.core.json.JsonObject;
 import lombok.Data;
 
 @Data
 public class Whisky {
 	
-	private static AtomicInteger COUNTER = new AtomicInteger();
-	
 	private final Integer id;
 	private String name;
 	private String origin;
 	
 	public Whisky() {
-		id = COUNTER.getAndIncrement();
+		this.id = null;
 	}
 	
 	public Whisky(String name, String origin) {
-		this();
+		this.id = null;
 		this.name = name;
 		this.origin = origin;
 	}
